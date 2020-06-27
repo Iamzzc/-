@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小球碰撞游戏</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #area{
+            width: 600px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 100px auto;
+            position: relative;
+        }
+        #ball{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <!--<script src="../jquery/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+<div id="area">
+    <div id="ball"></div>
+</div>
+<script type="text/javascript">
+    var ballX = 0;//小球X轴初始位置
+    var ballY = 0;//小球Y轴初始位置
+    directX = 1;//小球X轴方向
+    directY = 1;//小球Y轴方向
+    speed = 2;//小球运动速度
+    //封装获取id函数
+    function $(id){
+        return document.getElementById(id);
+    }
+
+    function move(){
+        ballX += directX*speed;
+        ballY += directY*speed;
+        $("ball").style.left = ballX+directX+"px";
+        $("ball").style.top = ballY+directY+"px";
+        maxWidth = $("area").offsetWidth - $("ball").offsetWidth;
+        maxHeight = $("area").offsetHeight - $("ball").offsetHeight;
+        if(ballX >= maxWidth || ballX<=0){
+            directX = -directX;
+        }
+        if(ballY >= maxHeight ||ballY<=0){
+            directY = -directY;
+        }
+    }
+    setInterval("move()",10)
+</script>
+</body>
+</html>
