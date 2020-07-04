@@ -12,15 +12,17 @@
         }
     </style>
     <script type="text/javascript">
+       
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
-
+        var shu = prompt("输入你想要的字")
 
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
+       
 
-        var texts = 'あいうえおかきくけこさそちつて'.split('');
-
+        var texts = '  '.split('');
+        texts = shu
         var fontSize = 16;
         var columns = canvas.width / fontSize;
         // 用于计算输出文字时坐标，所以长度即为列数
