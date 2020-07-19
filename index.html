@@ -1,57 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+
 <head>
-    <title>IDKWNTT</title>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    .div {
+      width: 480px;
+      height: 700px;
+      background-color: #f5f5f5ec;
+      margin: 0 auto;
+    }
+
+    .divv {
+      margin-top: 0;
+      width: 100%;
+      height: 70px;
+      background-color: #ececec54;
+      text-align: center
+    }
+
+    .p {
+      color: #00000078;
+      font-weight: normal;
+      font-size: 50px;
+      letter-spacing: 7px;
+
+    }
+    .you{
+      float:right
+    }
+    .divvv {
+      margin: 0 auto;
+      width: 98%;
+      height: 68%;
+      background-color: #ffffff;
+    }
+
+    .mima {
+      background-color: #ffffff;
+      width: 98%;
+      height: 68%;
+      border: hidden;
+      outline: none;
+    }
+
+    input[type=checkbox]:after {
+      display: none;
+      display: block;
+      width: 110px;
+      height: 26px;
+      text-align: center;
+      line-height: 14px;
+      font-size: 16px;
+      color: #272727e5;
+      border: 2px solid #ddd;
+      background-color: #fafafa;
+      box-sizing: border-box;
+      border-radius: 3px;
+      content: '未保存';
+      font-weight: normal;
+      margin-top: -5px;
+    }
+
+    input[type=checkbox]:checked:after {
+      content: '已保存';
+      background-color: #dfdfdff5;
+    }
+
+    .btn {
+      margin: 50px 3%;
+      width: 58px;
+      height: 25px;
+      color: #272727e5;
+      border: 2px solid #ddd;
+      background-color: #fafafa;
+
+    }
+  </style>
 </head>
-<body> <canvas id="canvas"></canvas>
-    <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-    </style>
-    <script type="text/javascript">
-       
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-        var shu = prompt("输入你想要的字")
 
-        canvas.height = window.innerHeight;
-        canvas.width = window.innerWidth;
-       
+<body>
+  <div class="div">
+    <div class="divv">
+      <p class="p">备忘录</p>
+    </div>
 
-        var texts = '  '.split('');
-        texts = shu
-        var fontSize = 16;
-        var columns = canvas.width / fontSize;
-        // 用于计算输出文字时坐标，所以长度即为列数
-        var drops = [];
-        //初始值
-        for (var x = 0; x < columns; x++) {
-            drops[x] = 1;
-        }
+    <div class="divvv">
 
-        function draw() {
-            //让背景逐渐由透明到不透明
-            ctx.fillStyle = 'rgba(1, 0.02, 0.04, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            //文字颜色
-            ctx.fillStyle = '#0f0';
-            ctx.font = fontSize + 'px arial';
-            //逐行输出文字
-            for (var i = 0; i < drops.length; i++) {
-                var text = texts[Math.floor(Math.random() * texts.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      <textarea id="user" class="mima" style="word-wrap:break-word; resize:none;"></textarea>
 
-                if (drops[i] * fontSize > canvas.height || Math.random() > 0.98) {
-                    drops[i] = 1;
-                }
+    </div>
+   <button class="btn" onClick="copyCode()">复制</button>
+    <button class="btn" onClick="chu()">清除</button>
+    <input type="checkbox" id="remember" onclick="fn()" style="margin-left: 34%;">
 
-                drops[i]++;
-            }
-        }
-        setInterval(draw, 27);
-    </script>
+  </div>
+  <script type="text/javascript">
+    var user = document.getElementById('user'),
+
+      check = document.getElementById('remember'),
+      localUser = localStorage.getItem('user') || ''; //获取到user的值并保存
+    localPass = localStorage.getItem('pass') || ''; //获取到pwd的值并保存
+    user.value = localUser;
+    pass.value = localPass;
+    if (localUser !== '' && localPass !== '') {
+      check.setAttribute('checked', '');
+    }
+
+    function fn() {
+      if (check.checked) {
+        localStorage.setItem('user', user.value);
+
+      } else {
+        localStorage.setItem('user', '');
+
+      }
+    }
+    function copyCode() {
+      var copycode = document.getElementById("user");
+      copycode.select(); // 选择对象
+      document.execCommand("Copy"); // 执行浏览器复制命令
+      alert("复制成功")
+    }
+    function chu() {
+      var chu = document.getElementById("user").value = "";
+      alert("清除成功")
+    }
+
+  </script>
+
 </body>
+
 </html>
