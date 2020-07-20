@@ -1,135 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <style>
-    .div {
-      width: 480px;
-      height: 700px;
-      background-color: #f5f5f5ec;
-      margin: 0 auto;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            background-image: url(img/gif.gif);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+   
 
-    .divv {
-      margin-top: 0;
-      width: 100%;
-      height: 70px;
-      background-color: #ececec54;
-      text-align: center
-    }
+        .divv {
+            width: 1277px;
+            height: 220;
+            margin: 19% auto;
+        }
 
-    .p {
-      color: #00000078;
-      font-weight: normal;
-      font-size: 50px;
-      letter-spacing: 7px;
+        .div {
+            width: 400px;
+            height: 210px;
+            padding-left: 7px;
+            background-color: #126ee7c2;
+            border-radius: 7px;
+            margin-left: 9px;
+            float: left;
+        }
+       
 
-    }
-    .you{
-      float:right
-    }
-    .divvv {
-      margin: 0 auto;
-      width: 98%;
-      height: 68%;
-      background-color: #ffffff;
-    }
+        .wen {
+            font-size: 14px;
+            color: #fff;
+            border: hidden;
+            background-color: #126ee7c2;
+            float: left;
+        }
 
-    .mima {
-      background-color: #ffffff;
-      width: 98%;
-      height: 99%;
-      border: hidden;
-      outline: none;
-    }
+        .wne {
+            width: 59px;
+            height: 20px;
+            color: #fff;
+            background-color: #0a5df6;
+            margin-left: 3px;
+            border-radius: 1px;
+            float: left;
+            text-align: center
+        }
 
-    input[type=checkbox]:after {
-      display: none;
-      display: block;
-      width: 110px;
-      height: 26px;
-      text-align: center;
-      line-height: 14px;
-      font-size: 16px;
-      color: #272727e5;
-      border: 2px solid #ddd;
-      background-color: #fafafa;
-      box-sizing: border-box;
-      border-radius: 3px;
-      content: '未保存';
-      font-weight: normal;
-      margin-top: -5px;
-    }
+        .zhu {
+            width: 380px;
+            height: 170px;
+            border-radius: 4px;
+            font-size: 23px;
+            letter-spacing: 3px;
+            text-align: center;
+            font-family: 仿宋;
+            outline: none;
+            resize: none;
+        }
 
-    input[type=checkbox]:checked:after {
-      content: '已保存';
-      background-color: #dfdfdff5;
-    }
-
-    .btn {
-      margin: 50px 3%;
-      width: 58px;
-      height: 25px;
-      color: #272727e5;
-      border: 2px solid #ddd;
-      background-color: #fafafa;
-
-    }
-  </style>
+        .zhu::-webkit-scrollbar {
+            display: none
+        }
+    </style>
 </head>
 
 <body>
-  <div class="div">
+    <audio id="myaudio" class="media-audio" src="开口脆.mp4" width="0" height="0" preload loop="loop"></audio >
+     
     <div class="divv">
-      <p class="p">备忘录</p>
+        <div class="div"><button class="wen">具体事件</button><textarea id="input1" class="zhu" placeholder="营销号"></textarea></div>
+        <div class="div"><button class="wen">事件起因</button><textarea id="input2" class="zhu"></textarea></div>
+        <div class="div"><button onclick="yinxiao()" class="wen">生成文案</button>
+            <div class="wne">☜点这</div>
+            <textarea id="input3" class="zhu" placeholder="生成器"></textarea>
+        </div>
     </div>
-
-    <div class="divvv">
-
-      <textarea id="user" class="mima" style="word-wrap:break-word; resize:none;"></textarea>
-
-    </div>
-   <button class="btn" onClick="copyCode()">复制</button>
-    <button class="btn" onClick="chu()">清除</button>
-    <input type="checkbox" id="remember" onclick="fn()" style="margin-left: 34%;">
-
-  </div>
-  <script type="text/javascript">
-    var user = document.getElementById('user'),
-
-      check = document.getElementById('remember'),
-      localUser = localStorage.getItem('user') || ''; //获取到user的值并保存
-    localPass = localStorage.getItem('pass') || ''; //获取到pwd的值并保存
-    user.value = localUser;
-    pass.value = localPass;
-    if (localUser !== '' && localPass !== '') {
-      check.setAttribute('checked', '');
-    }
-
-    function fn() {
-      if (check.checked) {
-        localStorage.setItem('user', user.value);
-
-      } else {
-        localStorage.setItem('user', '');
-
-      }
-    }
-    function copyCode() {
-      var copycode = document.getElementById("user");
-      copycode.select(); // 选择对象
-      document.execCommand("Copy"); // 执行浏览器复制命令
-      alert("复制成功")
-    }
-    function chu() {
-      var chu = document.getElementById("user").value = "";
-      alert("清除成功")
-    }
-
-  </script>
-
 </body>
+<script>
 
-</html>
+    function yinxiao(inputText) {
+        var input1 = document.getElementById('input1');
+        var input2 = document.getElementById('input2');
+        var input3 = document.getElementById('input3');
+
+        var zhuyu = input1.value;
+        var qita = input2.value;
+        if (zhuyu == '') {
+            zhuyu = '一位国内小伙写了个营销号生成器'
+        }
+        if (qita == '') {
+            qita = '他很聪明'
+        }
+        var jie = "小伙伴们大家好啊，今天我们来聊聊"
+            + zhuyu + ","
+            + zhuyu + "相信大家应该都很熟悉，那么"
+            + zhuyu + "到底是怎么一回事呢？下面小编就带大家一起探讨一下。其实说"
+            + zhuyu + "就是因为" + qita + ",小伙伴们可能很惊讶，但事实就是这样小编也很惊讶,好了这就是关于" + zhuyu + "的内容了，如有兴趣的小伙伴欢迎在下方留言哟，拜拜！ ";
+        input3.value = jie;
+
+    }
+
+    function audioAutoPlay(id) {
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay('myaudio');
+
+</script>
