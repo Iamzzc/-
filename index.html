@@ -2,229 +2,136 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .dsd{
-      width: 255px;
-      height: 34px;
-      border: 1px solid rgb(11, 168, 207);
-      outline:none;
-      padding: 0px 3px;
-      border-radius: 7px 0 0 7px;
-      
-    }
-    .asd{
-      width: 86px;
-      height: 36px;
-      background-color: rgba(0, 180, 235, 0.849);
-      border: 2px solid rgb(0, 169, 211);
-      border-radius: 0 7px 7px 0;
-      font-size: 16px;
-      color: rgb(255, 255, 255);
-      outline:none;
-      vertical-align:middle;
-    }
-    .asd:hover{
-      background-color: rgb(61, 206, 250);
-    }
-    .boxl {
-      width: 700px;
-      height: 200px;
-      border: 2px solid rgb(11, 168, 207);
-      border-radius: 6px;
-      margin: 14% auto;
-     
-     
-    }
-    .ott{
-      width: 297px;
-      height: 148px;
-      margin-top: 22px;
-      border: 1px solid rgba(115, 173, 190, 0.315);
-      border-radius: 50px;
-      float:left;
-    }
-
-    
-    ul,* {
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    .box {
-      width: 400px;
-      
-      float:right;
-    }
-
-    .hide {
-      display: none;
-    }
-
-    #head {
-      height: 26px;
-      border-bottom: 1px solid rgb(0, 140, 255);
-      
-    }
-
-    #head li {
-      float: left;
-      width: 78px;
-      height: 24px;
-      line-height: 24px;
-      margin-top: 22px;
-      text-align: center;
-      border: 1px solid rgb(0, 140, 255);
-      border-bottom: none;
-      border-radius:4px 4px 0 0;
-      background-color: #f5f5f5;
-      cursor: pointer;
-    }
-
-    #box2 {
-     margin-top: 20px;
-      border: 1px rgb(0, 140, 255) solid;
-      border-top: none;
-      border-radius:0 0 4px 4px;
-      padding: 20px;
-    }
-
-    #head .working {
-      color: rgb(0, 75, 214);
-      position: relative;
-      height: 24px;
-      margin-bottom: -1px;
-      background-color: #fff;
-    }
-    .lian{
-      width: 90px;
-      height: 20px;
-      margin-top: 5px;
-      border: 1px solid rgb(101, 172, 253);
-      border-radius: 4px;
-      float: left;
-    }
-    .lian:hover{
-      opacity: 0.7;
-      background-color: rgba(149, 220, 248, 0.479);
-      border-radius: 6px;
-      border: 1px solid rgb(19, 119, 233);
-    }
-    p{
-      opacity: 0.8;
-      color: rgb(0, 110, 255);
-    }
-    p:hover{
-      font-family: 黑体;
-      opacity: 1;
-    }
-  </style>
-  <script>
-    window.onload = function () {
-      var hNode = document.getElementsByTagName("li");
-      var info = document.getElementById("box2").getElementsByTagName("div");
-      for (var i = 0; i < hNode.length; i++) {
-        hNode[i].index = i;
-        hNode[i].onmousemove = function () {
-          for (var j = 0; j < hNode.length; j++) {
-            hNode[j].className = "";
-            info[j].className = "hide"
-          }
-          hNode[this.index].className = "working";
-          info[this.index].className = "";
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+          background-color: #5da0bb9d;
       }
-    }  
-  </script>
+        .divv {
+            width: 1277px;
+            height: 220;
+            margin: 19% auto;
+        }
+
+        .div {
+            width: 400px;
+            height: 210px;
+            padding-left: 7px;
+            background-color: #126ee7c2;
+            border-radius: 7px;
+            margin-left: 9px;
+            float: left;
+        }
+
+
+        .wen {
+            font-size: 14px;
+            color: #fff;
+            border: hidden;
+            background-color: #126ee7c2;
+            float: left;
+        }
+
+        .wne {
+            width: 59px;
+            height: 20px;
+            color: #fff;
+            background-color: #0a5df6;
+            margin-left: 3px;
+            border-radius: 1px;
+            float: left;
+            text-align: center
+        }
+
+        .zhu {
+            width: 380px;
+            height: 170px;
+            border-radius: 4px;
+            font-size: 31px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            text-align: center;
+            font-family: 仿宋;
+            outline: none;
+            resize: none;
+        }
+
+        .zhu::-webkit-scrollbar {
+            display: none
+        }
+    </style>
 </head>
 
 <body>
-  <div class="boxl">
-   <div class="ott">
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594446862168&di=371beb05c5490e605dddc5b114f81e51&imgtype=0&src=http%3A%2F%2Fwww.xincainet.com%2Fstatic%2Fkindeditor%2Fattached%2Fimage%2F20180801%2F20180801102259_12389.jpg" width="297px" height="147px">
-      </div>
+    
 
-
-
-
-
-
-    <!-- HTML页面布局 -->
-    <div class="box">    
-      <ul id="head">
-          <li class="working">搜索</li>
-          <li>知道</li>
-          <li>文库</li>
-          <li>经验</li>  
-          <li>百科</li> 
-      </ul>
-      <div id="box2">
-          <div>
-            <!--<form action="http//baidu.com/baidu" target="_blank" >
-            <table bgcolor="#FFFFFF"><tr><td>
-            <input name=tn type=hidden value=baidu >
-           
-            <input type=text  name=word size=30  placeholder="Do you need me help you baidu ?" autocomplete="off" class="dsd" >
-            <input type="submit" class="asd" value="百度搜索" >
-            </td></tr></table>
-            </form>-->
-            <form action="https://www.baidu.com/baidu">
-              <input type=text name = word placeholder="Do you need me help you baidu ?" autocomplete="off" class="dsd">
-              <input type="submit" value="百度搜索" class="asd">
-              <input name=tn type=hidden value="bds">
-              </form>
-          </div>
-          <div class="hide">
-            <form action="https://zhidao.baidu.com/search?lm=0&rn=10&pn=0&fr=search_0&ie=gbk&word=123">
-              <input type=text name = word placeholder="Do you need me help you baidu ?" autocomplete="off" class="dsd">
-              <input type="submit" value="百度知道" class="asd">
-              <input name=tn type=hidden value="bds">
-              </form>
-          </div>
-          <div class="hide">
-            <form action="https://wenku.baidu.com/search?word=123&lm=0&od=0&fr=top_home&ie=utf-8">
-              <input type=text name = word placeholder="Do you need me help you baidu ?" autocomplete="off" class="dsd">
-              <input type="submit" value="百度文库" class="asd">
-              <input name=tn type=hidden value="bds">
-            
-              </form>
-          </div>
-          <div class="hide">
-            <form action="https://jingyan.baidu.com/search?lm=0&rn=10&pn=0&fr=search_0&ie=gbk&word=123">
-              <input type=text name = word placeholder="Do you need me help you baidu ?" autocomplete="off" class="dsd">
-              <input type="submit" value="百度经验" class="asd">
-              <input name=tn type=hidden value="bds">
-           
-              </form>
+    <div class="divv">
+        <div class="div"><button class="wen">具体事件</button><textarea id="input1" class="zhu" placeholder="营销号"></textarea></div>
+        <div class="div"><button class="wen">事件起因</button><textarea id="input2" class="zhu"></textarea></div>
+        <div class="div"><button onclick="yinxiao()" class="wen">生成文案</button>
+            <div class="wne">☜点这</div>
+            <textarea id="input3" class="zhu" placeholder="生成器"></textarea>
         </div>
-        <div class="hide">
-          <form action="https://baike.baidu.com/search?lm=0&rn=10&pn=0&fr=search_0&ie=gbk&word=123">
-            <input type=text name = word placeholder="Do you need me help you baidu ?" autocomplete="off" class="dsd">
-            <input type="submit" value="百度百科" class="asd">
-            <input name=tn type=hidden value="bds">
-         
-      </div>
-      </div>   
-      <div class="lian"><a href="https://www.baidu.com/"><p>Baidu官网</p></a></div>    <div class="lian" style="margin-left: 4px;"><a href="http://news.baidu.com/"><p>百度新闻</p></a></div>   <div class="lian" style="margin-left: 4px;"><a href="http://image.baidu.com/?fr=shitu"><p>百度识图</p></a></div>
-      <div class="lian" style="margin-left: 4px;width: 100px;"><a href="https://tieba.baidu.com/index.html"><p>百度贴吧</p></a></div>   
-      <div class="lian" ><a href="https://xueshu.baidu.com/"><p>百度学术</p></a></div>
-      <div class="lian" style="margin-left: 4px;"><a href="https://pan.baidu.com/"><p>百度网盘</p></a></div>
-      <div class="lian" style="margin-left: 4px;"><a href="https://fanyi.baidu.com/"><p>百度翻译</p></a></div>
-      <div class="lian" style="margin-left: 4px;width: 100px;"><a href="https://www.baidu.com/more/"><p>更多产品</p></a></div>
     </div>
 
 
 
-  
 
 
+    <div id="bdtts_div_id">
+        <audio id="tts_autio_id" autoplay="autoplay">
+            <source id="tts_source_id"
+                src="http://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=6&amp;per=1&amp;text=老营销号了"
+                type="audio/mpeg">
+            <embed id="tts_embed_id" height="0" width="0" src="">
+        </audio>
+    </div>
 
 </body>
+<script>
 
-</html>
+    function yinxiao(inputText) {
+        var input1 = document.getElementById('input1');
+        var input2 = document.getElementById('input2');
+        var input3 = document.getElementById('input3');
+
+        var zhuyu = input1.value;
+        var qita = input2.value;
+        if (zhuyu == '') {
+            zhuyu = '一位国内小伙写了个营销号生成器'
+        }
+        if (qita == '') {
+            qita = '他很聪明'
+        }
+        var jie = "小伙伴们大家好啊，今天我们来聊聊"
+            + zhuyu + ","
+            + zhuyu + "相信大家应该都很熟悉，那么"
+            + zhuyu + "到底是怎么一回事呢？下面小编就带大家一起探讨一下。其实说"
+            + zhuyu + "就是因为" + qita + ",小伙伴们可能很惊讶，但事实就是这样小编也很惊讶,好了这就是关于" + zhuyu + "的内容了，如有兴趣的小伙伴欢迎在下方留言哟，拜拜！ ";
+        input3.value = jie;
+
+
+        var ttsDiv = document.getElementById('bdtts_div_id');
+        var ttsAudio = document.getElementById('tts_autio_id');
+
+
+        // 文字转语音
+        ttsDiv.removeChild(ttsAudio);
+        var au1 = '<audio id="tts_autio_id" autoplay="autoplay">';
+        var sss = '<source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&per=3&spd=5&text=' + jie + '" type="audio/mpeg">';
+        var eee = '<embed id="tts_embed_id" height="0" width="0" src="">';
+        var au2 = '</audio>';
+        ttsDiv.innerHTML = au1 + sss + eee + au2;
+        ttsAudio = document.getElementById('tts_autio_id');
+        ttsAudio.play();
+
+
+
+
+    }
+
+
+
+</script>
